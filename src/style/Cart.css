@@ -1,0 +1,92 @@
+.cart-container-wrapper {
+  height: 80%;
+  padding: 0px 10px;
+  margin: 10% 0;
+  justify-content: flex-start;
+  border: 2px solid #F0F0F5;
+  border-radius: 8px;
+}
+
+.cart-title {
+  text-align: start;
+}
+
+.product-container {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 10px;
+}
+
+.img-container {
+  width: 100px;
+  height: 100px;
+  margin-right: 10px;
+}
+
+.product-info {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  flex-grow: 1;
+  padding: 5px 10px;
+}
+
+.product-name {
+  margin-bottom: 10px;
+  font-family: 'Noto Sans TC';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  color: #2A2A2A;
+}
+
+.product-control {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.product-control img {
+  width: 20px;
+  margin: 0px 10px;
+  background-color: #F0F0F5;
+  padding: 5px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.product-info .price {
+  position: absolute;
+  top: 5px;
+  right: 5%;
+  font-family: 'Nunito Sans';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 22px;
+  text-align: right;
+  color: #000000;
+}
+
+.product-info .price::before {
+  content: '$';
+  font-family: 'Nunito Sans';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 22px;
+  text-align: right;
+  color: #000000;
+}
+
+.cart-info::before {
+  display: block;
+  content: '';
+  width: 100%;
+  height: 2px;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  background-color: #F0F0F5;
+}

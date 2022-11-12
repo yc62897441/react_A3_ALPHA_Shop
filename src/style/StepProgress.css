@@ -1,0 +1,46 @@
+.progress-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.progress-group {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.progress-group span {
+  margin-right: 2px;
+}
+
+.progress-icon {
+  position: relative;
+  width: 20px;
+  height: 20px;
+  border: 1px solid #000000;
+  border-radius: 50%;
+}
+
+.progress-icon .text {
+  position: absolute;
+  top: 40%;
+  transform: translate(-50%, -50%);
+}
+
+.progress-icon .text-hidden {
+  display: none;
+}
+
+.progress-icon img {
+  width: 20px;
+  height: 20px;
+}
+
+.progress-bar {
+  display: block;
+  content: '';
+  width: 50px;
+  height: 2px;
+  background-color: black;
+}
