@@ -1,5 +1,5 @@
 import "../../style/StepProgress.css";
-import pgComplete from "../../icons/pg-complete.svg";
+import pgComplete from "../../icons/pg-complete.png";
 
 import '../../style/StepProgress.css'
 
