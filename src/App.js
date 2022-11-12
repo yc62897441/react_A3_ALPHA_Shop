@@ -12,22 +12,22 @@ function App() {
     <div className="App">
       <body>
         <Header />
-        <main class="site-main">
-          <div class="main-container">
+        <main className="site-main">
+          <div className="main-container">
             {/* <!-- register --> */}
             <section
-              class="register-container col col-lg-6 col-sm-12"
+              className="register-container col col-lg-6 col-sm-12"
               data-phase="1"
               data-total-price="0"
             >
               {/* <!-- register-title --> */}
-              <h2 class="register-title col col-12">結帳</h2>
+              <h2 className="register-title col col-12">結帳</h2>
               <StepProgress />
               <Step1 />
             </section>
 
             {/* <!-- cart --> */}
-            <Cart className="cart-container" />
+            <Cart />
 
             {/* <!-- progress-control --> */}
             <ProgressControl />
