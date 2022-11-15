@@ -1,7 +1,7 @@
 .cart-container-wrapper {
-  height: 80%;
-  padding: 0px 10px;
-  margin: 10% 0;
+  height: 100%;
+  padding: 15px;
+  margin: 0px;
   justify-content: flex-start;
   border: 2px solid #F0F0F5;
   border-radius: 8px;
@@ -9,6 +9,7 @@
 
 .cart-title {
   text-align: start;
+  margin: 0px 0px 15px;
 }
 
 .product-container {
@@ -89,4 +90,10 @@
   margin-top: 20px;
   margin-bottom: 10px;
   background-color: #F0F0F5;
+}
+
+@media (min-width: 992px) {
+  .cart-container-wrapper {
+    padding: 30px;
+  }
 }

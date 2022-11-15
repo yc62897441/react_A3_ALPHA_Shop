@@ -9,13 +9,14 @@
 }
 
 .input-label {
+  text-align: start;
   font-family: 'Noto Sans TC';
   font-style: normal;
   font-weight: bold;
   font-size: 12px;
   line-height: 16px;
   color: #808080;
-  margin-bottom: 8px;
+  margin: 8px 0px;
 }
 
 input,

@@ -44,3 +44,15 @@
   height: 2px;
   background-color: black;
 }
+
+@media (min-width: 768px) {
+  .progress-bar {
+    width: 30px;
+  }
+}
+
+@media (min-width: 992px) {
+  .progress-bar {
+    width: 50px;
+  }
+}
