@@ -6,6 +6,12 @@
   box-sizing: border-box;
 }
 
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+} 
+
 ul,
 ol,
 li {
@@ -27,6 +33,7 @@ a {
 .site-main {
   width: 90%;
   max-width: 1280px;
+  flex-grow: 1;
   margin: 0 auto;
   margin-bottom: 20px;
 }
