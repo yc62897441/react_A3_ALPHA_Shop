@@ -32,7 +32,6 @@
   width: 30px;
   height: 30px;
 }
-/* navbar-toggle navbar顯示/隱藏 切換 */
 
 .navbar-menu {
   position: absolute;
@@ -41,7 +40,17 @@
   padding: 0px 15px;
   background-color: #FFFFFF;
   width: calc(100% + 30px);
+  transform: scale(1, 0);
+  opacity: 0;
 }
+
+.navbar-toggle:checked~.navbar-menu {
+  transform: scale(1, 1);
+  transform-origin: top;
+  transition: opacity 0.35s ease-out 0.1s;
+  opacity: 1;
+}
+/* navbar-toggle navbar顯示/隱藏 切換 */
 
 .site-menu-list {
   display: flex;
@@ -138,6 +147,10 @@
     padding: 0px;
     align-items: center;
     background-color: transparent;
+    transform: scale(1, 1);
+    transform-origin: top;
+    transition: transform 0.3s ease-out;
+    opacity: 1;
   }
 
   .nav-list {
