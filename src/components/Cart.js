@@ -3,7 +3,32 @@ import iconMinus from "../icons/minus.png";
 
 import "../style/Cart.css";
 
-function CartItem({ name, img, quantity, price }) {
+function CartItem({ name, img, quantity, price, items, setItems }) {
+  // 修改 item 的數量
+  function changeQuantity(e) {
+    // 建立新陣列
+    const newItems = items.map((item) => {
+      if (item.name === name) {
+        let updateQuantity = item.quantity;
+        // if else 判斷是增加還是減少
+        if (e.target.className === "iconMinus") {
+          updateQuantity = item.quantity > 0 ? item.quantity - 1 : 0;
+        } else {
+          updateQuantity = item.quantity + 1;
+        }
+        const newItem = {
+          ...item,
+          quantity: updateQuantity,
+        };
+        return newItem;
+      } else {
+        return item;
+      }
+    });
+    // 用更新後的新陣列取代舊資料
+    setItems(newItems);
+  }
+
   return (
     <div
       className="product-container col col-12"
@@ -15,9 +40,21 @@ function CartItem({ name, img, quantity, price }) {
         <div className="product-name">{name}</div>
         <div className="product-control-container">
           <div className="product-control">
-            <img src={iconMinus} alt="" srcSet="" />
+            <img
+              className="iconMinus"
+              src={iconMinus}
+              alt=""
+              srcSet=""
+              onClick={changeQuantity}
+            />
             <span className="product-count">{quantity}</span>
-            <img src={iconPlus} alt="" srcSet="" />
+            <img
+              className="iconPlus"
+              src={iconPlus}
+              alt=""
+              srcSet=""
+              onClick={changeQuantity}
+            />
           </div>
         </div>
         <div className="price">{quantity * price}</div>
@@ -26,30 +63,13 @@ function CartItem({ name, img, quantity, price }) {
   );
 }
 
-function Cart() {
-  const data = [
-    {
-      id: "1",
-      name: "貓咪罐罐",
-      img: "https://picsum.photos/300/300?text=1",
-      price: 100,
-      quantity: 2,
-    },
-    {
-      id: "2",
-      name: "貓咪干干",
-      img: "https://picsum.photos/300/300?text=2",
-      price: 200,
-      quantity: 1,
-    },
-  ];
+function Cart({ items, setItems, shippingPrice, isNormalShipping }) {
   const cartItems = [];
   let totalItemsPrice = 0;
-  let shippingPrice = 100;
   let totalPrice = 0;
 
   // 建立 cartItem 的 JSX；計算 totalItemsPrice
-  data.forEach((item) => {
+  items.forEach((item) => {
     cartItems.push(
       <CartItem
         key={item.id}
@@ -57,13 +77,15 @@ function Cart() {
         img={item.img}
         quantity={item.quantity}
         price={item.price}
+        items={items}
+        setItems={setItems}
       />
     );
     totalItemsPrice += item.quantity * item.price;
   });
 
   // 計算總價
-  if (totalItemsPrice >= 500) {
+  if (totalItemsPrice >= 500 && isNormalShipping) {
     totalPrice = totalItemsPrice;
   } else {
     totalPrice = totalItemsPrice + shippingPrice;
@@ -79,7 +101,9 @@ function Cart() {
         <section className="cart-info shipping col col-12">
           <div className="text">運費</div>
           <div className="price">
-            {totalItemsPrice >= 500 ? "免運" : shippingPrice}
+            {totalItemsPrice >= 500 && isNormalShipping
+              ? "免運"
+              : shippingPrice}
           </div>
         </section>
         <section className="cart-info total col col-12">
