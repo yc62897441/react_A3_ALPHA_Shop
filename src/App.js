@@ -1,13 +1,17 @@
 import "./App.css";
+import { useState } from "react";
 
 import Header from "./components/header";
 import StepProgress from "./components/steps/StepProgress";
 import Step1 from "./components/steps/Step1";
+import Step2 from "./components/steps/Step2";
+import Step3 from "./components/steps/Step3";
 import Cart from "./components/Cart";
 import ProgressControl from "./components/steps/ProgressControl";
 import Footer from "./components/Footer";
 
 function App() {
+  const [step, setStep] = useState(1);
   return (
     <div className="App">
       <body>
@@ -22,15 +26,17 @@ function App() {
             >
               {/* <!-- register-title --> */}
               <h2 className="register-title col col-12">結帳</h2>
-              <StepProgress />
-              <Step1 />
+              <StepProgress step={step} />
+              <Step1 step={step} />
+              <Step2 step={step} />
+              <Step3 step={step} />
             </section>
 
             {/* <!-- cart --> */}
             <Cart />
 
             {/* <!-- progress-control --> */}
-            <ProgressControl />
+            <ProgressControl step={step} setStep={setStep} />
           </div>
         </main>
         <Footer />

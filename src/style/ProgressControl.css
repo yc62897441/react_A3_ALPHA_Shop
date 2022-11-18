@@ -24,6 +24,10 @@
   border: 1px solid #F67599;
 }
 
+.button-group .button-hidden {
+  visibility: hidden;
+}
+
 .button-group img {
   width: 20px;
   height: 10px;

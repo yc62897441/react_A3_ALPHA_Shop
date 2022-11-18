@@ -1,9 +1,12 @@
-import '../../style/Step1.css'
+import "../../style/Steps.css";
 
-function Step1() {
+function Step1({ step }) {
   return (
     // <!-- address phase -->
-    <form className="col col-12" data-phase="address">
+    <form
+      className={step === 1 ? "col col-12 step1" : "col col-12 step-hidden"}
+      data-phase="address"
+    >
       <h3 className="form-title">寄送地址</h3>
       <section className="form-body col col-12">
         <div className="col col-12">
@@ -19,7 +22,7 @@ function Step1() {
               </select>
             </div>
           </div>
-          <div className="input-group input-w-lg-4 input-w-sm-s2">
+          <div className="input-group input-w-lg-4 input-w-sm-s3">
             <div className="input-label">姓名</div>
             <input type="text" placeholder="請輸入姓名" />
           </div>
@@ -82,4 +85,4 @@ function Step1() {
   );
 }
 
-export default Step1
+export default Step1;

@@ -24,12 +24,17 @@
 
 .progress-icon .text {
   position: absolute;
-  top: 40%;
+  top: 50%;
   transform: translate(-50%, -50%);
 }
 
-.progress-icon .text-hidden {
-  display: none;
+.progress-icon .text-focus {
+  width: 20px;
+  height: 20px;
+  background-color: #000000;
+  border: 1px solid #000000;
+  border-radius: 50%;
+  color: #FFFFFF;
 }
 
 .progress-icon img {
