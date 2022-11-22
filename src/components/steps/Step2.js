@@ -1,11 +1,18 @@
 import "../../style/Steps.css";
 
-function Step2({ step, setShippingPrice, setIsNormalShipping }) {
+function Step2({
+  step,
+  setShippingPrice,
+  setIsNormalShipping,
+  inputShoppingForm,
+}) {
   function toggleShippingPrice(e) {
     if (e.target.id === "shipping-standard") {
+      inputShoppingForm(e);
       setShippingPrice(200);
       setIsNormalShipping(true);
     } else if (e.target.id === "shipping-dhl") {
+      inputShoppingForm(e);
       setShippingPrice(500);
       setIsNormalShipping(false);
     }
@@ -22,6 +29,7 @@ function Step2({ step, setShippingPrice, setIsNormalShipping }) {
             id="shipping-standard"
             type="radio"
             name="shipping"
+            value="normal"
             onChange={toggleShippingPrice}
           />
           <div class="radio-info">
@@ -38,6 +46,7 @@ function Step2({ step, setShippingPrice, setIsNormalShipping }) {
             id="shipping-dhl"
             type="radio"
             name="shipping"
+            value="DHL"
             onChange={toggleShippingPrice}
           />
           <div class="radio-info">

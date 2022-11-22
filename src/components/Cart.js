@@ -63,10 +63,10 @@ function CartItem({ name, img, quantity, price, items, setItems }) {
   );
 }
 
-function Cart({ items, setItems, shippingPrice, isNormalShipping }) {
+function Cart({ items, setItems, shippingPrice, isNormalShipping, totalPrice, setTotalPrice }) {
+  //購物車 items，以及 items 總價(不含運費)
   const cartItems = [];
   let totalItemsPrice = 0;
-  let totalPrice = 0;
 
   // 建立 cartItem 的 JSX；計算 totalItemsPrice
   items.forEach((item) => {
@@ -84,11 +84,12 @@ function Cart({ items, setItems, shippingPrice, isNormalShipping }) {
     totalItemsPrice += item.quantity * item.price;
   });
 
-  // 計算總價
+  // 計算總價(items 總價 + 運費)，更新回 App.js 的 totalPrice state
+  // 購物金額滿 500，且選擇一般貨運，則免運；否則要運費(一般貨運 200、DHL 500)
   if (totalItemsPrice >= 500 && isNormalShipping) {
-    totalPrice = totalItemsPrice;
+    setTotalPrice(totalItemsPrice);
   } else {
-    totalPrice = totalItemsPrice + shippingPrice;
+    setTotalPrice(totalItemsPrice + shippingPrice);
   }
 
   return (
@@ -102,7 +103,7 @@ function Cart({ items, setItems, shippingPrice, isNormalShipping }) {
           <div className="text">運費</div>
           <div className="price">
             {totalItemsPrice >= 500 && isNormalShipping
-              ? '免運'
+              ? "免運"
               : shippingPrice}
           </div>
         </section>

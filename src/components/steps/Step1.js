@@ -1,6 +1,6 @@
 import "../../style/Steps.css";
 
-function Step1({ step }) {
+function Step1({ step, inputShoppingForm }) {
   return (
     // <!-- address phase -->
     <form
@@ -13,7 +13,7 @@ function Step1({ step }) {
           <div className="input-group input-w-lg-2 input-w-sm-s1">
             <div className="input-label">稱謂</div>
             <div className="select-container">
-              <select>
+              <select name="title" onChange={inputShoppingForm}>
                 <option value="mr" selected="">
                   先生
                 </option>
@@ -24,24 +24,39 @@ function Step1({ step }) {
           </div>
           <div className="input-group input-w-lg-4 input-w-sm-s3">
             <div className="input-label">姓名</div>
-            <input type="text" placeholder="請輸入姓名" />
+            <input
+              type="text"
+              name="name"
+              placeholder="請輸入姓名"
+              onChange={inputShoppingForm}
+            />
           </div>
         </div>
         <div className="col col-12">
           <div className="input-group input-w-lg-3 input-w-sm-full">
             <div className="input-label">電話</div>
-            <input type="tel" placeholder="請輸入行動電話" />
+            <input
+              type="tel"
+              name="tel"
+              placeholder="請輸入行動電話"
+              onChange={inputShoppingForm}
+            />
           </div>
           <div className="input-group input-w-lg-3 input-w-sm-full">
             <div className="input-label">Email</div>
-            <input type="email" placeholder="請輸入電子郵件" />
+            <input
+              type="email"
+              name="email"
+              placeholder="請輸入電子郵件"
+              onChange={inputShoppingForm}
+            />
           </div>
         </div>
         <div className="col col-12">
           <div className="input-group input-w-lg-2 input-w-sm-full">
             <div className="input-label">縣市</div>
             <div className="select-container">
-              <select required="">
+              <select name="county" onChange={inputShoppingForm} required="">
                 <option value="">請選擇縣市</option>
                 <option value="KLU">基隆市</option>
                 <option value="TPH">新北市</option>
@@ -77,7 +92,12 @@ function Step1({ step }) {
           </div>
           <div className="input-group input-w-lg-4 input-w-sm-full">
             <div className="input-label">地址</div>
-            <input type="text" placeholder="請輸入地址" />
+            <input
+              type="text"
+              name="address"
+              placeholder="請輸入地址"
+              onChange={inputShoppingForm}
+            />
           </div>
         </div>
       </section>
