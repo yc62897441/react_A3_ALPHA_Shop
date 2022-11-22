@@ -1,7 +1,7 @@
-import iconPlus from "../icons/plus.png";
-import iconMinus from "../icons/minus.png";
+import iconPlus from '../icons/plus.png';
+import iconMinus from '../icons/minus.png';
 
-import "../style/Cart.css";
+import '../style/Cart.css';
 
 function CartItem({ name, img, quantity, price, items, setItems }) {
   // 修改 item 的數量
@@ -11,7 +11,7 @@ function CartItem({ name, img, quantity, price, items, setItems }) {
       if (item.name === name) {
         let updateQuantity = item.quantity;
         // if else 判斷是增加還是減少
-        if (e.target.className === "iconMinus") {
+        if (e.target.className === 'iconMinus') {
           updateQuantity = item.quantity > 0 ? item.quantity - 1 : 0;
         } else {
           updateQuantity = item.quantity + 1;
@@ -35,7 +35,7 @@ function CartItem({ name, img, quantity, price, items, setItems }) {
       data-count={quantity}
       data-price={price}
     >
-      <img className="img-container" src={img} />
+      <img className="img-container" src={img} alt="" />
       <div className="product-info">
         <div className="product-name">{name}</div>
         <div className="product-control-container">
@@ -102,7 +102,7 @@ function Cart({ items, setItems, shippingPrice, isNormalShipping }) {
           <div className="text">運費</div>
           <div className="price">
             {totalItemsPrice >= 500 && isNormalShipping
-              ? "免運"
+              ? '免運'
               : shippingPrice}
           </div>
         </section>

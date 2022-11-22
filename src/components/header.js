@@ -20,27 +20,27 @@ function Header() {
         <nav className="navbar-menu">
           <ul className="nav-list site-menu-list mr-auto">
             <li className="nav-item">
-              <a className="nav-link" href="#">
+              <a className="nav-link" href="/">
                 男款
               </a>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="#">
+              <a className="nav-link" href="/">
                 女款
               </a>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="#">
+              <a className="nav-link" href="/">
                 最新消息
               </a>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="#">
+              <a className="nav-link" href="/">
                 客製商品
               </a>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="#">
+              <a className="nav-link" href="/">
                 聯絡我們
               </a>
             </li>
@@ -63,7 +63,7 @@ function Header() {
           </ul>
         </nav>
         {/* <!-- logo --> */}
-        <a className="header-logo-container" href="#">
+        <a className="header-logo-container" href="/">
           <img src={iconLogo} alt="" srcSet="" />
         </a>
       </div>

@@ -48,7 +48,7 @@ select {
   color: #2A2A2A;
   background-color: transparent;
   cursor: pointer;
-  -webkit-appearance: none;
+  /* -webkit-appearance: none; */
 }
 
 .col-12 {
